@@ -1,0 +1,28 @@
+public class Main {
+    public static String calc(String input) {
+        boolean romanOrArab = false;
+        String exception = "throws Exception";
+
+        int result = 0;
+        String[] inputSplit = input.split(" ");
+        if (inputSplit.length != 3) {
+            return exception;
+                }
+        Integer firstNumber = 0;
+        Integer secondNumber = 0;
+        if ((firstNumber < 1) || (firstNumber > 10) || (secondNumber < 1) || (secondNumber > 10)){
+            return exception;
+
+            String sign = inputSplit[1];
+            switch (sign) {
+                case "+" -> result = firstNumber + secondNumber;
+                case "-" -> result = firstNumber - secondNumber;
+                case "*" -> result = firstNumber * secondNumber;
+                case "/" -> result = firstNumber / secondNumber;
+                default -> {
+                    return exception;
+                }
+        }
+    }
+  
+    }
