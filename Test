@@ -1,16 +1,22 @@
 public class Main {
-    public static String calc(String input) {
+    public static String calc(String input)  throws NumberFormatException {
         boolean romanOrArab = false;
-        String exception = "throws Exception";
 
         int result = 0;
         String[] inputSplit = input.split(" ");
         if (inputSplit.length != 3) {
-            return exception;
-                }
+        
+        }
+
         Integer firstNumber = 0;
         Integer secondNumber = 0;
-        if ((firstNumber < 1) || (firstNumber > 10) || (secondNumber < 1) || (secondNumber > 10)){
+        try {
+             firstNumber = Integer.valueOf(inputSplit[0]);
+            secondNumber = Integer.valueOf(inputSplit[2]);
+                    }
+        catch (NumberFormatException e);
+
+        if ((firstNumber < 0) || (firstNumber > 11) || (secondNumber < 0) || (secondNumber > 11)){
             return exception;
 
             String sign = inputSplit[1];
@@ -24,5 +30,4 @@ public class Main {
                 }
         }
     }
-  
     }
